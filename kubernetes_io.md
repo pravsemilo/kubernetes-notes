@@ -12,4 +12,4 @@
   * Secret & Configuration Management - Deploy and update secrets and application configuration without rebuilding your image and without exposing secrets in your stack configuration.
   * Batch Execution - In addition to services, Kubernetes can manage your batch and CI workloads, replacing containers that fail, if desired.
 # References
-  * (https://kubernetes.io/)
+  * https://kubernetes.io/
