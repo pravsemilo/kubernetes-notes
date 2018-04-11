@@ -20,10 +20,10 @@
 ## `kubeadm`
 * If we already have a way to configure hosting resources, we can use kubeadm to bring up a cluster with a single command per machine.
 # Running Kubernetes Locally Via Minikube
-## `Minikube`
+# `Minikube`
 * Minikube is a tool that makes it easy to run K8s locally.
 * Runs a single node K8s cluster inside a VM on your local machine.
-### Features
+## Features
 * DNS
 * NodePorts
 * ConfigMaps & Secrets
@@ -31,7 +31,7 @@
 * Container Runtime - Docker / rkt / CRI-O
 * Enabling CNI (Container Network Interface)
 * Ingress
-### Quickstart
+## Quickstart
 * Supported Drivers
 	* virtualbox
 	* vmwarefusion
@@ -50,19 +50,19 @@
 	* `minikube get-k8s-versions`
 	* `minikube stop` - Stop a cluster.
 	* `minikube delete` - Delete the cluster, shutdown and delete the minikube virtual machine. No data is stored or preserved.
-### Interacting With Your Cluster
+## Interacting With Your Cluster
 * `kubectl`
 	* `minikube start` command creates a `kubectl context` called "minikube". This context contains the configuration to communicate with your minikube cluster.
 * Dashboard - `minikube dashboard`
 * Services
 	* `minikube service [-n namespace] [--url] NAME`
-### Networking
+## Networking
 * The minikube VM is exposed to the host system via a host-only IP address.
 * IP address can be obtained via `minikube ip` command.
 * Any services to type `NodePort` can be accessed over that IP address.
 * To determine NodePort of your service
 	* `kubectl get service $SERVICE --output='jsonpath="{.spec.ports[0].nodePort}"'`
-### Persistent Volumes
+## Persistent Volumes
 * Supports PersistentVolumes of type `hostPath`.
 * These PersistentVolumes are mapped to a directory inside minikube VM.
 * minikube VM boots into a tmpfs, so data will not be persisted across reboots.
