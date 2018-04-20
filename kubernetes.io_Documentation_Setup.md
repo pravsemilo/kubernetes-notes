@@ -70,7 +70,28 @@
 	* `/data`
 	* `/var/lib/localkube`
 	* `/var/lib/docker`
+# Bootstrapping Clusters With kubeadm
+* `kubeadm`
+	* Command to bootstrap the server.
+	* Toolkit that helps you bootstrap a best-practice K8s cluster in a easy, reasonably secure and extensible way.
+	* Supports managing `Bootstrap Tokens`.
+	* Helps in upgrading / downgrading clusters.
+	* Aims to setup a minimum viable cluster that passes the `Kubernetest Conformance Tests`.
+	* Does not install a networking solution. We have to install a third party CNI compliant networking solution.
+* Instructions
+	* Initializing your master.
+		* Master is the machine where control pane components run, including etcd (the cluster database) and the API server which the kubectl CLI communicates to.
+		* Run `kubeadm init` on any one of the machine in your cluster.
+		* Note the `kubeadm join` command that `kubeadm init` outputs.
+		* Token is used for mutual authentication between the master and joining nodes.
+		* Token included here is secret used to add authenticated nodes to your cluster.
+		* These tokens can be listed, created and deleted with the `kubeadm token` command.
+	* Installing a pod network
+		* 
+* `kubelet` - Component that runs in all machines of your cluster and does things like starting pods and containers.
+* `kubectl` - Command line utility to talk to your cluster.
 # References
 * https://kubernetes.io/docs/setup/
 * https://kubernetes.io/docs/setup/pick-right-solution/
 * https://kubernetes.io/docs/getting-started-guides/minikube/
+* https://kubernetes.io/docs/setup/independent/install-kubeadm/
