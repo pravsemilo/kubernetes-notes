@@ -4,7 +4,7 @@
 * Extensions of K8s API that is not necessarily available on every cluster.
 * Represents a customization of a particualar K8s installation.
 * Dynamically registered and independently updated of the cluster.
-* Can be accessed via _kubectl_.
+* Can be accessed via `kubectl`.
 ## Custom Controllers
 * On their own, custom resources simply let you store and retrieve structured data.
 * It is only when combined with a _controller_ that they become a true declarative API.
