@@ -10,8 +10,8 @@
 * Enables portability across infrastructures provides.
 * Provides simplicity of PaaS with flexibility of IaaS.
 ## How is Kubernetes a platform?
-* `Labels` empower users to organize their resources however they please.
-* `Annotations` enable users to decorate resources with custom information to facilitate their workflows and provide an easy way for management tools to checkpoint state.
+* _Labels_ empower users to organize their resources however they please.
+* _Annotations_ enable users to decorate resources with custom information to facilitate their workflows and provide an easy way for management tools to checkpoint state.
 * Kubernetes control plane is built upon the same APIs that are available to developers and users. Users can write their own controllers, such as schedulers, with their own APIs that can be targeted by a general-purpose command-line tool.
 * This design has enabled a number of other systems to build atop Kubernetes.
 ## What Kubernetes is not?
@@ -48,10 +48,10 @@
 * Runs controllers.
 * Logically each controller is a separate process, but for simplicity they are all compiled into a single binary and run in a single process.
 * These controllers include :
-	* `Node Controller` - Responsible for noticing and responding when nodes go down.
-	* `Replication Controller` - Responsible for maintaining the correct number of pods for every replication controller object in the system.
-	* `Endpoints Controller` - Populates the Endpoint object (joins Services and Pods).
-	* `Service Account & Token Controllers` - Create default account and API access tokens for new namespaces.
+	* _Node Controller_ - Responsible for noticing and responding when nodes go down.
+	* _Replication Controller_ - Responsible for maintaining the correct number of pods for every replication controller object in the system.
+	* _Endpoints Controller_ - Populates the Endpoint object (joins Services and Pods).
+	* _Service Account & Token Controllers_ - Create default account and API access tokens for new namespaces.
 ### cloud-controller-manager
 * Runs controllers that interact with the underlying cloud providers.
 * Runs cloud-provider specific controller loops only.
