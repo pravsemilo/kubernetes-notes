@@ -20,9 +20,18 @@
 # Kubernets Objects
 * Kubernetes contains a number of abstractions that represent the state of your system.
 * These abstractions are represented by objects in the Kubernetes API.
-* Basic K8s objects are `Pod`, `Service`, `Volume` and `Namespace`.
+* Basic K8s objects
+	* __Pod__
+	* __Service__
+	* __Volume__
+	* __Namespace__
 * Kubernetes contains a number of higher-level abstractions called _Controllers_. Controllers build upon the basic objects, and provide additional functionality and convenience features.
-* Controller include `ReplicaSet`, `Deployment`, `StatefulSet`, `DaemonSet` and `Job`.
+* Some of the common Controllers are
+	* __ReplicaSet__
+	* __Deployment__
+	* __StatefulSet__
+	* __DaemonSet__
+	* __Job__
 # Kubernetes Control Plane
 * Governs how K8s communicates with your cluster.
 * Maintains a record of all of K8s objects in the system.
