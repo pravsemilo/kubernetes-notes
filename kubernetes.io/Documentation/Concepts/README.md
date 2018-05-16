@@ -13,7 +13,7 @@
 	* __Kubernetes Master__ : Collection of three processes that run on a single node in your cluster designated as the master node.
 		* `kube-apiserver`
 		* `kube-controller-manager`
-		* 'kube-scheduler`
+		* `kube-scheduler`
 	* Each individual non-master node in your cluster runs two processes.
 		* `kubelet` - Communicates with Kubernetes master.
 		* `kube-proxy` - A network proxy which reflects K8s networking services on each node.
@@ -36,7 +36,7 @@
 * Governs how K8s communicates with your cluster.
 * Maintains a record of all of K8s objects in the system.
 * Runs continous control loop to manage the state of objects.
-* Control loops will responsd to changes in cluster and work to make the actual state of all objects in the system match the desired state.
+* Control loops will respond to changes in cluster and work to make the actual state of all objects in the system match the desired state.
 ## Kubernetes Master
 * Responsible for maintaining the desired state of your cluster.
 * Refers to a collection of processes.
