@@ -61,5 +61,29 @@ Resources are naturally scoped to a cluster or the namespace of a cluster.|Clust
 * Requires programming.
 * More control over API behavior like how data is stored, conversion between API versions etc.
 * Allows you to provide specialized implementations for your custom resources by writing and deploying your own standalone API server.
+# Choosing a method for adding custom resources
+* CRDs are easier to use.
+* Aggregated APIs are more flexible.
+* User CRDs if,
+	* You have a handful of fields.
+	* You are using the resource within your company as opposed to a commerical product.
+## Ease Of Use
+* CRDs don't require programming. CRD can be written in any language. On the other hand, AAs need to be written in Go.
+* CRs are handled by API server and hence don't need any additional service. On the other hand AA's need an additonal service to be created that could fail.
+* No ongoing support once the CRD is created. Any bug fixes are picked up as part of normal Kubernetes Master upgrades. AAs may need to periodically pickup bug fixes from upstream and rebuild and update the Aggregated APIserver.
+# Common Features
+* When you create a CR, either via CRD or AA, you get many features for your API.
+	* CRUD
+	* Watch
+	* Discovery
+	* json-patch
+	* merge-patch
+	* HTTPS
+	* Built-in authentication
+	* Built-in authorization
+	* Finalizers
+	* UI / CLI display
+	* Unset vs empty fields
+	* Labels and annotations
 # References
 * https://kubernetes.io/docs/concepts/api-extension/custom-resources/
