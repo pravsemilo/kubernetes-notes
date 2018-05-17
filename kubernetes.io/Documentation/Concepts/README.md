@@ -3,7 +3,7 @@
 	* What container images they use?
 	* The number of replicas.
 	* What network and disk resources you want to make available.
-* You set your desired state by creating objects using the Kubernetes API:
+* You set your desired state by creating objects using the Kubernetes API :
 	* `kubectl` command line
 	* Kubernetes API
 * Once you’ve set your desired state, the _Kubernetes Control Plane_ works to make the cluster’s current state match the desired state. It performs the following tasks automatically.
@@ -17,7 +17,7 @@
 	* Each individual non-master node in your cluster runs two processes.
 		* `kubelet` - Communicates with Kubernetes master.
 		* `kube-proxy` - A network proxy which reflects K8s networking services on each node.
-# Kubernets Objects
+# Kubernetes Objects
 * Kubernetes contains a number of abstractions that represent the state of your system.
 * These abstractions are represented by objects in the Kubernetes API.
 * Basic K8s objects
