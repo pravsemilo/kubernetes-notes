@@ -4,6 +4,14 @@
 * In contrast, annotations are not used to identify and select objects.
 * Metadata in annotations can be small or large, structured or unstructured, and can include characters not permitted by labels.
 * Annotations like labels are key/value maps.
+```
+"metadata": {
+	  "annotations": {
+		      "key1" : "value1",
+		          "key2" : "value2"
+			    }
+}
+```
 * Examples of information that could be recorded in annotations :
 	* Fields managed by declarative configuration layer.
 	* Build, release and image information.
