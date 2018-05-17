@@ -1,0 +1,13 @@
+* Annotations are used to attach arbitrary non-identifying metadata to objects.
+* You can use either labels or annotations to attach metadata to K8s objects.
+* Labels can be used to select or find objects that satisfy certain conditions.
+* In contrast, annotations are not used to identify and select objects.
+* Metadata in annotations can be small or large, structured or unstructured, and can include characters not permitted by labels.
+* Annotations like labels are key/value maps.
+* Examples of information that could be recorded in annotations :
+	* Fields managed by declarative configuration layer.
+	* Build, release and image information.
+	* Pointers to logging, monitoring, analytics or audit repositories.
+	* Client library or tools that can be used for debugging purposes.
+# References
+* https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
