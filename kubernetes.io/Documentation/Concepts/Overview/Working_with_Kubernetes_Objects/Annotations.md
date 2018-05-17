@@ -6,10 +6,10 @@
 * Annotations like labels are key/value maps.
 ```
 "metadata": {
-	  "annotations": {
-		      "key1" : "value1",
-		          "key2" : "value2"
-			    }
+	"annotations": {
+		"key1" : "value1",
+		"key2" : "value2"
+	}
 }
 ```
 * Examples of information that could be recorded in annotations :
