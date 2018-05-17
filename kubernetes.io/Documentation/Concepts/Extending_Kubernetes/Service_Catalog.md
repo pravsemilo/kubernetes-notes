@@ -37,4 +37,4 @@
 ## Mapping the connection credentials
 * After binding, the final step involves mapping the connection credentials and service-specific information into the application. These pieces of information are stored in secrets that the application in the cluster can access and use to connect directly with the managed service.
 # References
-* https://kubernetes.io/docs/concepts/service-catalog/
+* https://kubernetes.io/docs/concepts/extend-kubernetes/service-catalog/
