@@ -86,4 +86,4 @@ Resources are naturally scoped to a cluster or the namespace of a cluster.|Clust
 	* Unset vs empty fields
 	* Labels and annotations
 # References
-* https://kubernetes.io/docs/concepts/api-extension/custom-resources/
+* https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/

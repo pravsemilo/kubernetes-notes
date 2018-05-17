@@ -10,4 +10,4 @@
 	* This extension-apiserver will need to be paired with one or more controllers if active management of the resource is needed.
 	* `apiserver-builder` provides a skeleton for both.
 # References
-* https://kubernetes.io/docs/concepts/api-extension/apiserver-aggregation/
+* https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/apiserver-aggregation/
