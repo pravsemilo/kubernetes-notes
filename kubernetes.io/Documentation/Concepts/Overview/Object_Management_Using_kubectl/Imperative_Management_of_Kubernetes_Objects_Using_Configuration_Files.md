@@ -4,27 +4,27 @@
 $ kubectl create -f <filename|url>
 ```
 # How to update objects
-	```
-	$ kubectl replace -f <filename|url>
-	```
+```
+$ kubectl replace -f <filename|url>
+```
 * Updating objects with the `replace` command drops all parts of the spec not specified in the configuration file.
 * This should not be used with objects whose specs are partially managed by the cluster.
 * Independently managed fields must be copied to the configuration file to prevent `release` from dropping them.
 # How to delete objects
-	```
-	$ kubectl delete -f <filename|url>
-	```
+```
+$ kubectl delete -f <filename|url>
+```
 # How to view an object
-	```
-	$ kubectl get -f <filename|url> -o yaml
-	```
+```
+$ kubectl get -f <filename|url> -o yaml
+```
 # Limitations
 * The `create`, `replace` and `delete` commands work well when each object's configuration is fully defined and recorded in it's configuration file.
 * If you need to support multiple writers to the same object, you can use `kubectl apply` to manage the object.
 # Creating and editing an object from a URL without saving the configuration
-	```
-	kubectl create --edit
-	```
+```
+kubectl create --edit
+```
 # Migrating from imperative commands to imperative object configuration
 * Export the live object to a local object configuration file.
 	```
