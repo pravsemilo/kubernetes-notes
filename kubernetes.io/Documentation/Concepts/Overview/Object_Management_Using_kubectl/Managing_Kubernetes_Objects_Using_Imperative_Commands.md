@@ -13,7 +13,7 @@
 		```
 	* Some object types have subtypes that you can specify in `create` command.
 		```
-		kubectl create service nodeport <myservicename>
+		$ kubectl create service nodeport <myservicename>
 		```
 # How to update objects
 * `kubectl` supports verb-driven commands for updating some of the most common object types.
