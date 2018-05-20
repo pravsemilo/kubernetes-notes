@@ -1,8 +1,8 @@
 * K8s objects can be created, deleted and updated by using `kubectl` along with an object configuration file in YAML or JSON.
 # How to create objects
-	```
-	$ kubectl create -f <filename|url>
-	```
+```
+$ kubectl create -f <filename|url>
+```
 # How to update objects
 	```
 	$ kubectl replace -f <filename|url>
