@@ -8,9 +8,9 @@
 	* Support more object types.
 	* More explicit about their intent.
 	* Require users to know the type of objects they intend to create.
-	```
-	create <objecttype> [<subtype>] <instancename>
-	```
+		```
+		create <objecttype> [<subtype>] <instancename>
+		```
 	* Some object types have subtypes that you can specify in `create` command.
 		```
 		kubectl create service nodeport <myservicename>
@@ -29,9 +29,9 @@
 	* `patch` - Directly modify specific fields of a live object.
 # How to delete objects
 * You can use the `delete` command to delete an object from a cluster.
-```
-delete <type>/<name>
-```
+	```
+	delete <type>/<name>
+	```
 # How to view an object
 * `get` - Prints basic information.
 * `describe` - Prints aggregated detailed information about matching objects.
