@@ -63,8 +63,6 @@ $ kubectl get -f <filename|url> -o yaml
 3. Set the `last-applied-configuration` annotation to match the value of configuration file.
 4. Merge the results from 1, 2 and 3 into a single patch request to the API server.
 ## How different types of fields are merged
-<<<<<<< HEAD
-=======
 Field Type|Description|Examples|Action
 ----------|-----------|--------|------
 _Primitive_|String, integer or boolean|`image`, `replicas` etc.|Replace
