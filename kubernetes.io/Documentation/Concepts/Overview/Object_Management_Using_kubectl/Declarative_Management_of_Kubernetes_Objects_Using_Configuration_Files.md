@@ -62,5 +62,12 @@ $ kubectl get -f <filename|url> -o yaml
 2. Fields to add or set - Fields present in the configuration file whose values don't match the live configuration. 
 3. Set the `last-applied-configuration` annotation to match the value of configuration file.
 4. Merge the results from 1, 2 and 3 into a single patch request to the API server.
+## How different types of fields are merged
+* When `kubectl apply` updates a map or list field, it doesn't replace the entire field, instead it updates the individual subelements.
+Field Type|Description|Examples|Action
+----------|-----------|--------|------
+_Primitive_|String, integer or boolean|`image`, `replicas` etc.|Replace
+_Map_, also called _object_|A field of type map or a complex types that contains subfields.|`labels`, `annotations`, `spec`, `metadata` etc.|Merge elements or subfields
+_List_| A field containing a list of items that can be either primitive or maps.|`containers`, `ports`, `args` etc.|Varies
 # References
 * https://kubernetes.io/docs/concepts/overview/object-management-kubectl/declarative-config/
