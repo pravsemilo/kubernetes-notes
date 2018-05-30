@@ -87,5 +87,17 @@ Yes|Yes|Not applicable|Compare sub fields values.
 Yes|No|Not applicable|Set live to local configuration.
 No|Not applicable|Yes|Delete from live configuration.
 No|Not applicable|No|Do nothing. Keep live value.
+### Merging changes for fields of type list
+* Which of the below strategies is chosen for a given field is controlled by the `patchStrategy` tag in `types.go`. If no `patchStrategy` is specified for a field of type list, then list is replaced.
+#### Replace the list
+* Treat the list same as a primitive field. Replace or delete the entire list. This preserves ordering.
+#### Merge individual elements of a list of complex elements
+* Treat the list as a map and treat a specific field of each element as a key.
+* Add, delete or update individual elements.
+* Doesn't preserve ordering.
+* Uses a special tag on each field called a `patchMergeKey`.
+	* `patchMergeKey` is defined for each field in the K8s source code `types.go`.
+	* When merging a list of maps, the field specified as `patchMergeKey` for a given element is used like a map key for that element.
+#### Merge a list of primitive elements
 # References
 * https://kubernetes.io/docs/concepts/overview/object-management-kubectl/declarative-config/
