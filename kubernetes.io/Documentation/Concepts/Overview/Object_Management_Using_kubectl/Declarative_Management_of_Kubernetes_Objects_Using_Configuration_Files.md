@@ -69,5 +69,12 @@ _Primitive_|String, integer or boolean|`image`, `replicas` etc.|Replace
 _Map_, also called _object_|A field of type map or a complex types that contains subfields.|`labels`, `annotations`, `spec`, `metadata` etc.|Merge elements or subfields
 _List_| A field containing a list of items that can be either primitive or maps.|`containers`, `ports`, `args` etc.|Varies
 * When `kubectl apply` updates a map or list field, it doesn't replace the entire field, instead it updates the individual subelements.
+### Merging changes to primitive fields
+Field in object configuration file|Field in live object configuration|Field in last applied configuration|Action
+----------------------------------|----------------------------------|-----------------------------------|------
+Yes|Yes|Not applicable|Set live to configuration file value.
+Yes|No|Not applicable|Set live to local configuration.
+No|Not applicable|Yes|Clear from live configuration.
+No|Not applicable|No|Do nothing. Keep live value.
 # References
 * https://kubernetes.io/docs/concepts/overview/object-management-kubectl/declarative-config/
