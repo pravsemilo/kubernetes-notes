@@ -50,7 +50,7 @@
 ```
 $ kubectl get -f <filename|url> -o yaml
 ```
-# How `apply` calcultaes difference and merge changes
+# How `apply` calculates difference and merge changes
 * _Patch_
 	* An update operation that is scoped to specific fields of an object instead of the entire object.
 	* Enables updating specific fields on an object without reading it.
@@ -71,19 +71,19 @@ _List_| A field containing a list of items that can be either primitive or maps.
 * When `kubectl apply` updates a map or list field, it doesn't replace the entire field, instead it updates the individual subelements.
 ### Merging changes to primitive fields
 * Fields are replaced or cleared.
-Field in object configuration file|Field in live object configuration|Field in last applied configuration|Action
-----------------------------------|----------------------------------|-----------------------------------|------
-Yes|Yes|Not applicable|Set live to configuration file value.
-Yes|No|Not applicable|Set live to local configuration.
-No|Not applicable|Yes|Clear from live configuration.
-No|Not applicable|No|Do nothing. Keep live value.
+	Field in object configuration file|Field in live object configuration|Field in last applied configuration|Action
+	----------------------------------|----------------------------------|-----------------------------------|------
+	Yes|Yes|Not applicable|Set live to configuration file value.
+	Yes|No|Not applicable|Set live to local configuration.
+	No|Not applicable|Yes|Clear from live configuration.
+	No|Not applicable|No|Do nothing. Keep live value.
 ### Merging changes to map fields
 * Merged by comparing each of the subfields or elements of the map.
-Key in object configuration file|Key in live object configuration|Field in last applied configuration|Action
---------------------------------|--------------------------------|-----------------------------------|------
-Yes|Yes|Not applicable|Compare sub fields values.
-Yes|No|Not applicable|Set live to local configuration.
-No|Not applicable|Yes|Delete from live configuration.
-No|Not applicable|No|Do nothing. Keep live value.
+	Key in object configuration file|Key in live object configuration|Field in last applied configuration|Action
+	--------------------------------|--------------------------------|-----------------------------------|------
+	Yes|Yes|Not applicable|Compare sub fields values.
+	Yes|No|Not applicable|Set live to local configuration.
+	No|Not applicable|Yes|Delete from live configuration.
+	No|Not applicable|No|Do nothing. Keep live value.
 # References
 * https://kubernetes.io/docs/concepts/overview/object-management-kubectl/declarative-config/
