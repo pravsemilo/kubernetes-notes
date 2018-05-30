@@ -99,5 +99,22 @@ No|Not applicable|No|Do nothing. Keep live value.
 	* `patchMergeKey` is defined for each field in the K8s source code `types.go`.
 	* When merging a list of maps, the field specified as `patchMergeKey` for a given element is used like a map key for that element.
 #### Merge a list of primitive elements
+# Default field values
+* The API server sets certain fields to default values in the live configuration if they are not specified when the object is created.
+* In a patch request, defaulted fields are not re-defaulted unless they are explicitly cleared as part of a patch request.
+	* This can cause unexpected behavior for fields that are defaulted based on the values of other fields.
+	* When the other fields are later changed, the values defaulted from them will not be updated unless they are explicitly cleared.
+	* For this reason, it is recommended that certain fields defaulted by the server are explicitly defined in the configuration file, even if the desired values match the server defaults.
+	* This makes it easier to recognize conflicting values that will not be re-defaulted by the server.
+* These fields should be explicitly defined in the object configuration file :
+	* _Selectors_ and _PodTemplate_ labels on workloads, such as _Deployment_, _StatefulSet_, _Job_, _DaemonSet_, _ReplicaSet_ and _ReplicationController_.
+	* Deployment rollout strategy.
+## How to clear server-defaulted fields or fields set by other writers
+* Option 1 - Remove the field by directly modifying the live object.
+* Option 2 - Remove the field through configuration file.
+	* Add the field to configuration file to match the live object.
+	* Apply the configuration file. This updates the annotation to include the field.
+	* Delete the field from configuration file.
+	* Apply the configuration file. The deletes the field from live object and annotation.
 # References
 * https://kubernetes.io/docs/concepts/overview/object-management-kubectl/declarative-config/
