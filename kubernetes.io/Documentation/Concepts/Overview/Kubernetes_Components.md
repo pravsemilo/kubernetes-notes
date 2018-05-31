@@ -14,7 +14,7 @@
 * Always have a backup plan for etcd's data in your cluster.
 ## kube-scheduler
 * Watches newly created pods that have no node assigned.
-* Selects a node for them to run on based on individual and collcetive resource requirements, hardware / software / policy constraints, affinity and anti-affinity specifications, data locality and deadlines.
+* Selects a node for them to run on based on individual and collective resource requirements, hardware / software / policy constraints, affinity and anti-affinity specifications, data locality and deadlines.
 ## kube-controller-manager
 * Runs controllers.
 * Logically each controller is a separate process, but for simplicity they are all compiled into a single binary and run in a single process.
