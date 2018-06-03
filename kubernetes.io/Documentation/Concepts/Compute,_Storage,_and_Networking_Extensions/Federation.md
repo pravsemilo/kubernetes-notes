@@ -19,5 +19,10 @@
 * `kubefed` is the recommended way to deploy federated clusters.
 # Setting up federation
 * To be able to federate multiple clusters, you first need to setup a federation control plane.
+# API resources
+* Once you have the federation control plane set up, you can start creating federated API resources.
+# Cascading deletion
+* K8s 1.6 supports cascading deletion of federated resources.
+* Not enabled by default.
 # References
 * https://kubernetes.io/docs/concepts/cluster-administration/federation/
