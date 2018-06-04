@@ -6,7 +6,7 @@
 	* Portable Cloud Platform
 * Provides a container-centric management environment.
 * Orchestrates computing, network and storage infrastructure on behalf of user workloads.
-* Enables portability across infrastructures provides.
+* Enables portability across infrastructure providers.
 * Provides simplicity of PaaS with flexibility of IaaS.
 # How is Kubernetes a platform?
 * _Labels_ empower users to organize their resources however they please.
