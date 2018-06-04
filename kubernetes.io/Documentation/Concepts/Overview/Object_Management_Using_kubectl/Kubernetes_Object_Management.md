@@ -31,7 +31,8 @@ Declarative object configuration|Directories of files|Production projects|1+|Hig
 ## Disadvantages
 * Requires basic understanding of the object schema.
 * Writing file is an additional step.
-* Doesn't work on directories.
+* Works best on files, not on directories.
+* Updates to live objects must be reflected in configuration files. Otherwise they will be lost in the next replacement.
 # Declarative object configuration
 * User operates on the object configuration files stored locally.
 * However user does not define the operations to be taken on the files.
