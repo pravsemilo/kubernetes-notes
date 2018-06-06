@@ -3,7 +3,7 @@
 	* The commands are named to be recognizable to users unfamiliar with the Kubernetes object types.
 		* `run` - Create a new `Deployment` object to run `Containers` in one or more `Pods`.
 		* `expose` - Create a new `Service` object to load balance traffic across `Pods`.
-		* `autoscale` - Create a new `Autoscaler` object to automatically horizantally scale a controller, such as a `Deployment`.
+		* `autoscale` - Create a new `Autoscaler` object to automatically horizontally scale a controller, such as a `Deployment`.
 * `kubectl` also supports creation commands driven by object type.
 	* Support more object types.
 	* More explicit about their intent.
