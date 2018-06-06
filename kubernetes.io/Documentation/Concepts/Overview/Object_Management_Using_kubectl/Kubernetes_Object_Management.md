@@ -14,8 +14,8 @@ Declarative object configuration|Directories of files|Production projects|1+|Hig
 * No history of previous configurations.
 ## Examples
 ```
-kubectl run nginx --image nginx
-kubectl create deployment nginx --image nginx
+$ kubectl run nginx --image nginx
+$ kubectl create deployment nginx --image nginx
 ```
 ## Advantages
 * Commands are simple, easy to learn and remember.
@@ -30,9 +30,9 @@ kubectl create deployment nginx --image nginx
 * The file must contain a full definition of object in YAML or JSON format.
 ##  Examples
 ```
-kubectl create -f nginx.yaml
-kubectl delete -f nginx.yaml
-kubectl replace -f nginx.yaml
+$ kubectl create -f nginx.yaml
+$ kubectl delete -f nginx.yaml
+$ kubectl replace -f nginx.yaml
 ```
 ## Advantages
 * Configuration can be stored in version control system.
@@ -51,8 +51,8 @@ kubectl replace -f nginx.yaml
 * This enables working on directories where different operations may be needed for different objects.
 ## Examples
 ```
-kubectl -f configs/
-kubectl -f -R configs/
+$ kubectl -f configs/
+$ kubectl -f -R configs/
 ```
 ## Advantages
 * Changes made directly to live objects are retained, even if they are not merged back to configuration files.
