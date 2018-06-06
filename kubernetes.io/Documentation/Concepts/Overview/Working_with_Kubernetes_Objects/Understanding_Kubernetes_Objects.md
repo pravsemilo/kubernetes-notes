@@ -28,7 +28,6 @@
 * `apiVersion` - Version of K8s API being used.
 * `kind` - What kind of object is being created?
 * `metadata` - Data that helps in object identification like `names`, `UID`, `namespaces` etc.
-* `spec`
-	* Format depends based on the object being created.
+* `spec` - Format depends based on the object being created.
 # References
 * https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/
