@@ -12,6 +12,11 @@ Declarative object configuration|Directories of files|Production projects|1+|Hig
 * Easy to get started.
 * Better to run a one-off task in a cluster.
 * No history of previous configurations.
+* Examples
+```
+kubectl run nginx --image nginx
+kubectl create deployment nginx --image nginx
+```
 ## Advantages
 * Commands are simple, easy to learn and remember.
 * Requires a single step to make changes to cluster.
