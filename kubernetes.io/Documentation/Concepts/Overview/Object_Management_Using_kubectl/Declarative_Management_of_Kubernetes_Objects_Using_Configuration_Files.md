@@ -3,7 +3,7 @@
 # Before you begin
 * Requires a firm understanding of the K8s object definitions and configuration.
 ## Terms used in this document :
-* _Object Configuration File / Configuration File_ : Defines the configuration for a K8s object.
+* _Object Configuration File / Configuration File_ : File that defines the configuration for a K8s object.
 * _Live Object Configuration / Live Configuration_ : Live configuration values of an object as observed by the K8s cluster. These are kept in K8s cluster storage, typically etcd.
 * _Declarative Configuration Writer / Declarative Writer_ : One who updates the live objects.
 # How to create objects
@@ -28,7 +28,6 @@
 	$ kubectl scale <deployment> --replicas=<replica-count>
 	```
 * This sets the `kubectl.kubernetes.io/last-applied-configuration: '{...}'` annotation on each object.
-* Annotation contains the contents of the object configuration file that was used to create the object.
 * Print the live configuration using
 	```
 	$ kubectl get -f <file|url> -o yaml
