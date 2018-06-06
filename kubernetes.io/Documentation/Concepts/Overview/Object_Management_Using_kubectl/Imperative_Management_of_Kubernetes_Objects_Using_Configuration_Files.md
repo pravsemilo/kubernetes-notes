@@ -9,7 +9,7 @@ $ kubectl replace -f <filename|url>
 ```
 * Updating objects with the `replace` command drops all parts of the spec not specified in the configuration file.
 * This should not be used with objects whose specs are partially managed by the cluster.
-* Independently managed fields must be copied to the configuration file to prevent `release` from dropping them.
+* Independently managed fields must be copied to the configuration file to prevent `replace` from dropping them.
 # How to delete objects
 ```
 $ kubectl delete -f <filename|url>
