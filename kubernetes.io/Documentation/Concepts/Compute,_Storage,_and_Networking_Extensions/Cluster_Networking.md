@@ -29,14 +29,5 @@
 * This implies that you can not just take two computers running docker and expect K8s to work. You must ensure that fundamental requirements are met.
 * This model is less complex.
 * Compatible with desire for K8s to enable low-friction porting of apps from VMs to containers.
-* K8s applies IP addresses at the `Pod` scope.
-	* Containers within a `Pod` share their networking namespaces - including IP addresses.
-	* Containers within a `Pod` can all reach each other's ports on localhost.
-	* This implies that containers within a `Pod` must coordinate port usage.
-	* This is called "IP-per-pod" model.
-		* This is implemented, using Docker as a "pod container" which holds the network namespace open while "app containers" join that namespace with Docker's `--net=container:<id>` function.
-* As with Docker, it is possible to request host ports.
-	* In this case port will be allocated on the host `Node` and traffic will be forwarded to the `Pod`.
-	* `Pod` is agnostic of existence of host ports.
 # References
 * https://kubernetes.io/docs/concepts/cluster-administration/networking/
