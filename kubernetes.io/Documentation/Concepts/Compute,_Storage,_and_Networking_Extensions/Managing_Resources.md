@@ -4,7 +4,7 @@
 ```
 $ kubectl create -f <file>
 ```
-	* Resources are created in the order mentioned in the file.
+* Resources are created in the order mentioned in the file.
 # Bulk operations in kubectl
 # Resources
 * https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/
