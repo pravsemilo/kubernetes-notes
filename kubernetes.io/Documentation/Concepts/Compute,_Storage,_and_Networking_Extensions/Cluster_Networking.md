@@ -29,5 +29,9 @@
 * This implies that you can not just take two computers running docker and expect K8s to work. You must ensure that fundamental requirements are met.
 * This model is less complex.
 * Compatible with desire for K8s to enable low-friction porting of apps from VMs to containers.
+* _IP-per-pod Model_
+	* IPs are applied at `Pod` scope - containers within a `Pod` share their network namespace.
+	* Containers within a `Pod` can reach each other's port on `localhost`.
+	* This is implemented, using Docker as a _pod container_ which holds network namespace open, while app containers join that namespace using Docker's `--net=container:<id>`.
 # References
 * https://kubernetes.io/docs/concepts/cluster-administration/networking/
