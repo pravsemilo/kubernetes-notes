@@ -18,8 +18,8 @@
 	* _InternalIP_
 ## Condition
 * `condition` field describes the status of all `Running` nodes.
-Node Condition|Description
---------------|-----------
-`OutOfDisk`|Is there sufficient space for addding new pods?
+	Node Condition|Description
+	--------------|-----------
+	`OutOfDisk`|Is there sufficient space for addding new pods?
 # References
 * https://kubernetes.io/docs/concepts/architecture/nodes/
