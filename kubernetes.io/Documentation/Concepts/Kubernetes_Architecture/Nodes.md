@@ -29,5 +29,12 @@ Node Condition|Description
 `ConfigOK`|Is kubelet configured correctly?
 
 * Node condition is represented as a JSON object.
+* If the `Ready` condition is _Unknown_ or _False_ for longer than `pod-eviction-timeout`, an argument is passed to `kube-controller-manager` and all of the pods on that node are scheduled for deletion by `NodeController`.
+* The default eviction timeout is 5 minutes.
+* If the node is unreachable, `apiserver` is not able communicate with the `kubelet` on it. In such case the decision to delete cannot be communicated until communication is re-established to `apiserver`.
+## Capacity
+* Resources available like CPU, memory and maximum number of pods that can be scheduled.
+## Info
+* Kernel version, K8s version, Docker version, OS etc.
 # References
 * https://kubernetes.io/docs/concepts/architecture/nodes/
