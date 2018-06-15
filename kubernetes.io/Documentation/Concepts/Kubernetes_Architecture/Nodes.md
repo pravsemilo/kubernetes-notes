@@ -21,6 +21,13 @@
 
 Node Condition|Description
 --------------|-----------
-`OutOfDisk`|Is there sufficient space for addding new pods?
+`OutOfDisk`|Is there sufficient space for adding new pods?
+`Ready`|Is node healthy and ready to accept pods?
+`MemoryPressure`|Is node memory running low?
+`DiskPressure`|Is node disk space running low?
+`NetworkUnavailable`|
+`ConfigOK`|Is kubelet configured correctly?
+
+* Node condition is represented as a JSON object.
 # References
 * https://kubernetes.io/docs/concepts/architecture/nodes/
