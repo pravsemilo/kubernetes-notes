@@ -1,3 +1,4 @@
+* Easiest and most embraced logging method for containerized applications is to write to standard output and standard error streams.
 * Logs should have a separate storage and lifecycle independent of nodes, pods or containers. This concept is called _cluster-level logging_.
 	* Requires a separate backend to store, analyze and query logs.
 	* No native storage solution for log data.
@@ -9,6 +10,8 @@
 * Everything a containerized application writes to `stdout` and `stderr` is handled and redirected by container runtime.
 * Docker redirects these two streams to a `logging driver`.
 * In case of K8s the `logging driver` is configured to write to a file in JSON format.
+* By default, if a container restarts, the kubelet keeps one terminated container with its logs.
+* If a pod is evicted from the node, all corresponding containers are also evicted along with their logs.
 ## System component logs
 * Two types of system component, from a logging perspective.
 	* Those that run in a container. Eg. kube-scheduler, kube-proxy.
@@ -35,6 +38,8 @@
 		* Approach allow you to separate several log streams from different parts of your application.
 		* Can use built-in tools like `kubectl logs`.
 	* Sidecar container runs a logging agent, configured to pick up logs from an application container.
+		* Resource consumption can be higher.
+		* Cannot use `kubectl logs`.
 ## Push logs directly to a backend from within an application.
 # References
 * https://kubernetes.io/docs/concepts/cluster-administration/logging/
