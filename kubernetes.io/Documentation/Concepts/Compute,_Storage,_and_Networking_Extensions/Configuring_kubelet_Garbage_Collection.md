@@ -4,7 +4,7 @@
 	* Garbage collection for containers runs every minute.
 	* Garbage collection for images runs every five minutes.
 # Image Collection
-	* Image lifecycle is managed by imageManager, with help of cadvisor.
+	* Image lifecycle is managed by _imageManager_, with help of _cadvisor_.
 	* Factors into consideration :
 		* `HighThresholdPercent` 
 		* `LowThresholdPercent`
