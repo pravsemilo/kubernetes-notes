@@ -4,12 +4,12 @@
 	* Garbage collection for containers runs every minute.
 	* Garbage collection for images runs every five minutes.
 # Image Collection
-	* Image lifecycle is managed by _imageManager_, with help of _cadvisor_.
-	* Factors into consideration :
-		* `HighThresholdPercent` 
-		* `LowThresholdPercent`
-	* Disk usage above the high threshold will trigger garbage collection.
-	* Delete least recently used images until the low threshold has been met.
+* Image lifecycle is managed by _imageManager_, with help of _cadvisor_.
+* Factors into consideration :
+	* `HighThresholdPercent` 
+	* `LowThresholdPercent`
+* Disk usage above the high threshold will trigger garbage collection.
+* Delete least recently used images until the low threshold has been met.
 # Container Collection
 * Considers three user-defined variables :
 	* `MinAge` - Minimum age at which a container can be garbage collected.
