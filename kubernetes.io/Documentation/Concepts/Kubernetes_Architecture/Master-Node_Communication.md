@@ -15,6 +15,16 @@
 * Master components also communicate with apiserver over the secure port.
 # Master -> Cluster
 ## apiserver -> kubelet
+* Use Cases
+	* Fetching logs for pods.
+	* Attaching to running pods.
+	* Providing the kubelet's port forwarding functionality.
+* Communication terminates at kubelet's HTTPS endpoint.
+* apiserver doesn't verify kubelet's certificate. Use `--kubelet-certificate-autority` to use a root certificate bundle.
+* Kubelet authentication and authorization can be enabled for security.
 ## apiserver -> nodes, pods or services
+* Plain HTTP
+* Can be prefixed with `https:` but certificates will not be validated.
+* Not safe to run over public / untrusted networks.
 # References
 * https://kubernetes.io/docs/concepts/architecture/master-node-communication/
