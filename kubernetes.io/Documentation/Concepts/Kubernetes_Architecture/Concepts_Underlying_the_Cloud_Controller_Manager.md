@@ -43,5 +43,11 @@
 		* kubelet adds a taint to newly created node that makes the node unschedulable.
 		* CCM initializes the node with cloud specific information.
 		* CCM removes the taint.
+3. Kubernetes API server
+	* PersistentVolumeLabels controller moves the cloud dependent functionality of K8s apiserver to CCM.
+# Plugin mechanism
+* CCM users Go interfaces.
+* It uses `CloudProvider` interface.
+# Authorization
 # References
 * https://kubernetes.io/docs/concepts/architecture/cloud-controller/
