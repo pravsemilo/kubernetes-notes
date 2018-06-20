@@ -15,6 +15,12 @@
 1. Kubernetes controller manager
 * CCM runs the following control loops.
 	## Node controller
+	* Initalizing a node by obtaining information about the nodes running in the cluster from the cloud provider.
+	* Funcations
+		1. Initialize a node with cloud specific region / zone labels.
+		2. Initialize a node with cloud specific instance details like size, type etc.
+		3. Obtain the node's network address, hostname etc.
+		4. Handle node deletion issues.
 	## Route controller
 	## PersistentVolumeLables controller
 # References
