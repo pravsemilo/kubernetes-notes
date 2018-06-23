@@ -85,5 +85,19 @@ Resources are naturally scoped to a cluster or the namespace of a cluster.|Clust
 	* UI / CLI display
 	* Unset vs empty fields
 	* Labels and annotations
+# Preparing to install a custom resource
+## Third party code and new points of failure
+* Installing an Aggregated APIserver always involves running a new Deployment.
+## Storage
+* Irrespective of whether we use CRDs or AAs, creating resources involves consuming storage space.
+## Authentication, authorization and auditing
+* CRDs always use the same authentication, authorization and audit logging as built-in resources of your API Server.
+* If you use RBAC for authorization, you may need to grant access explicity for your new resources.
+* Aggregated API servers may or may not use the same authentication, authorization and auditing as the primary API server.
+# Accessing a custom resource
+* `kubectl`
+* K8s dynamic client
+* Your own REST client
+* A client generated using K8s client generation tools.
 # References
 * https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/
