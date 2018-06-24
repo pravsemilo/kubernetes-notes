@@ -32,22 +32,22 @@
 ## Specifying ImagePullSecrets on a Pod
 ## Use Cases
 1. Cluster running non-proprietary / open source images.
-* No need to hide images.
-* Can use public images from a public repository.
-* No other configuration.
-2. Cluster running proprietary images which should be hidden to those outside the company, but visible to cluster users.
-* Use a hosted private docker registry.
-	* Need to configure ~/.docker/config.json on each node.
-* Run an internal private registry with open access.
+	* No need to hide images.
+	* Can use public images from a public repository.
 	* No other configuration.
-* On a cluster where node configuration cannot be changed, use `imagePullSecrets`.
+2. Cluster running proprietary images which should be hidden to those outside the company, but visible to cluster users.
+	* Use a hosted private docker registry.
+		* Need to configure ~/.docker/config.json on each node.
+	* Run an internal private registry with open access.
+		* No other configuration.
+	* On a cluster where node configuration cannot be changed, use `imagePullSecrets`.
 3. Cluster with proprietary images, a few of which require stricter access control.
-* Ensure `AlwaysPullImages admission controller` is active. Otherwise all pods have access to all images.
-* Move sensitive data to `Secret` resource instead of packaging into an image.
+	* Ensure `AlwaysPullImages admission controller` is active. Otherwise all pods have access to all images.
+	* Move sensitive data to `Secret` resource instead of packaging into an image.
 4. A multi-tenant cluster where each tenant needs own private registry.
-* Ensure `AlwaysPullImages admission controller` is active. Otherwise all pods have access to all images.
-* Run a private registry with authorization enabled.
-* Generate registry credential for each tenant, put into secret and populate secret to each tenant namespace.
-* The tenant adds that secret to imagePullSecrets of each namespace.
+	* Ensure `AlwaysPullImages admission controller` is active. Otherwise all pods have access to all images.
+	* Run a private registry with authorization enabled.
+	* Generate registry credential for each tenant, put into secret and populate secret to each tenant namespace.
+	* The tenant adds that secret to imagePullSecrets of each namespace.
 # Resources
 * https://kubernetes.io/docs/concepts/containers/images/
