@@ -54,7 +54,7 @@
 * Pods are designed to support multiple cooperating processes as containers that form a cohesive unit of service.
 * Containers in a pod are automatically co-located and co-scheduled on the same machine.
 * Containers can share resources and dependencies, communicate with one another and coordinate when and how they are terminated.
-### __Networking__
+### Networking
 * Each pod is assigned a unique IP address.
 * Every container in the pod shares the network namespace including the IP address and network ports.
 * Containers within the same pod can communicate via localhost.
