@@ -17,7 +17,7 @@
 		* These containers might form a single cohesive unit of a service.
 		* Pod wraps these containers and storage resources as a single manageable entity.
 * Additional information on pod use cases
-	## The Distributed System Toolkit : Patterns for Composite Containers
+	## [The Distributed System Toolkit : Patterns for Composite Containers](https://kubernetes.io/blog/2015/06/the-distributed-system-toolkit-patterns/)
 	* Containers have become increasingly popular ways to package and deploy code.
 	* Containers solve real-world problems with existing packaging and deployment tools.
 	* Container offer us an opportunity to rethink the way we build distributed applications.
