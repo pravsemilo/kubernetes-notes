@@ -58,6 +58,33 @@
 * Each pod is assigned a unique IP address.
 * Every container in the pod shares the network namespace including the IP address and network ports.
 * Containers within the same pod can communicate via localhost.
+### Storage
+* Pod can specify a set of shared storage volumes.
+* All containers in the pod have access to the volumes.
+* Volumes also allow persistent data in a pod to survive in case of container restarts.
+# Working with Pods
+* Pods are not created directly. This is because pods are designed as ephemeral, disposable entities.
+* When a pod gets created (by you or by a controller), it is scheduled to run on a node in your cluster.
+* Pod remains in that node until the process is terminated, pod object is deleted, pod is evicted for lack of resources or the node fails.
+* Restarting a containers is not same as restarting the pod. Pod itself doesn't run, but is an environment the container runs in and persists until it is deleted.
+* Pods do not by themselves self heal.
+* If a pod is scheduled on a node that fails or scheduling operation itself fails, the pod is deleted.
+* Similarly a pod won't survive an eviction due to lack of resources or node maintenance.
+* K8s uses a higher level abstraction, called _Controller_, that handles the work of managing the relatively disposable pod entities.
+* Thus while it is possible to use the pod directly, it is far more common in K8s to manage pods using a controller.
+## Pods and Controller
+* A controller can create and manage multiple pods for you, handling replication and rollout and providing self healing capabilites.
+* Some controllers that contain one or more pods include :
+	* `Depoloyment`
+	* `StatefulSet`
+	* `DaemonSet`
+* In general, Controllers use a `Pod Template` that you provide to create the pods for which it is responsible.
+# Pod Templates
+* Pod templates are pod specifications which are included in other object like `Replication Controllers`, `Jobs` and `DaemonSets`.
+* Controllers use pod templates to create pods.
+* Pod templates are like cookie cutters. Once the cookie has been cut, it has not relationship to the cutter.
+* Hence any change to pod template doesn't change pods already created.
+* On the other hand pods specify the current desired state of all containers belonging to the pod.
 # References
 * https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/
 * https://kubernetes.io/blog/2015/06/the-distributed-system-toolkit-patterns/
