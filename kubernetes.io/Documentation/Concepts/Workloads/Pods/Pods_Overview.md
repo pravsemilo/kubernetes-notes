@@ -17,7 +17,27 @@
 		* These containers might form a single cohesive unit of a service.
 		* Pod wraps these containers and storage resources as a single manageable entity.
 * Additional information on pod use cases
-	# The Distributed System Toolkit : Patterns for Composite Containers
-	# Container Design Patterns
+	## The Distributed System Toolkit : Patterns for Composite Containers
+	* Containers have become increasingly popular ways to package and deploy code.
+	* Containers solve real-world problems with existing packaging and deployment tools.
+	* Container offer us an opportunity to rethink the way we build distributed applications.
+	* Just as SOA encouraged decomposition of an application to modular focused services, containers encourage further decomposition of services into closely cooperating modular containers.
+	* By virtue of establishing a boundary, containers enable users to build their services using modular, reusable components, which in turn lead to services that are more reliable, scalable and faster to build than applications built from monolithic containers.
+	* Abstraction layer provided by container image has great deal in common with abstraction boundary of class in object oriented programming.
+	* Just like the right way to code is the separation of concerns into modular objects, right way to package applications is separation of concerns into modular containers.
+	* This means breaking up not just the overall application, but also pieces within any one server into multiple modular containers that are easy to parameterize and reuse.
+	* This way, most application developers can compose together modular containers written by others and build applications more quickly.
+	* Modular containers provide the following :
+		* Speed application development, since containers can be reused.
+		* Codify expert knowledge since everyone collaborates on a single containerized implementation that reflects best practices.
+		* Enable agile teams since container boundary is a natural boundary and contract for team responsibilities.
+	* Provide separation of concerns and focus on specific functionality that reduces sphagetti dependencies and untestable components.
+	* Building an application from modular containers means thinking about symbiotic groups of containers that cooperate to provide a service, not one container per service. 
+	* In K8s, this symbiotic group of containers is called a pod. This also required that the containers of a pod be co-scheduled onto the same machine. The way to achieve this is to make pod itself as the atomic scheduling unit.
+	### Patterns
+	#### Sidecar Containers
+	* Extend and enhance the main container.
+	## Container Design Patterns
 # References
 * https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/
+* https://kubernetes.io/blog/2015/06/the-distributed-system-toolkit-patterns/
