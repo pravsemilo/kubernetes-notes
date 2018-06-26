@@ -37,14 +37,14 @@
 	### Patterns
 	* In all of these cases we have used container boundary as an encapsulation / abstraction boundary.
 	* This allowed to build modular and reusable components that we can combine to build applications.
-	#### Sidecar containers
-	* Extend and enhance the main container.
-	#### Ambassador containers
-	* Proxy a local connection to the world.
-	* Example : An ambassador is a proxy responsible for splitting reads and writes and sending them to appropriate servers.
-	#### Adapater containers
-	* Standardize and normalize output.
-	* Example : Transforming monitoring data from various containers into a single unified representation.
+		#### Sidecar containers
+		* Extend and enhance the main container.
+		#### Ambassador containers
+		* Proxy a local connection to the world.
+		* Example : An ambassador is a proxy responsible for splitting reads and writes and sending them to appropriate servers.
+		#### Adapater containers
+		* Standardize and normalize output.
+		* Example : Transforming monitoring data from various containers into a single unified representation.
 	## Container Design Patterns
 # References
 * https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/
