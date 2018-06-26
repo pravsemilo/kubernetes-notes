@@ -42,7 +42,7 @@
 		#### Ambassador containers
 		* Proxy a local connection to the world.
 		* Example : An ambassador is a proxy responsible for splitting reads and writes and sending them to appropriate servers.
-		#### Adapater containers
+		#### Adapter containers
 		* Standardize and normalize output.
 		* Example : Transforming monitoring data from various containers into a single unified representation.
 	## Container Design Patterns
