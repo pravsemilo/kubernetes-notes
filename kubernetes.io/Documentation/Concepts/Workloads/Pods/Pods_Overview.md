@@ -4,7 +4,7 @@
 * Smallest and simplest object that can be created / destroyed.
 * Represents a running process in your cluster.
 * Encapuslates an application container (or in some cases multiple containers), a storage resource, a unique network IP and options that govern how the container(s) should run.
-* Represents a unity of deployment : _a single instance of an application in K8s_, which might consist of either a single container or a small number of containers that are tightly coupled and share resources.
+* Represents a unit of deployment : _a single instance of an application in K8s_, which might consist of either a single container or a small number of containers that are tightly coupled and share resources.
 * Docker is the most common container runtime.
 * Support for other container runtimes is also provided.
 * Pods are used in two ways.
@@ -46,6 +46,18 @@
 		* Standardize and normalize output.
 		* Example : Transforming monitoring data from various containers into a single unified representation.
 	## [Container Design Patterns](https://kubernetes.io/blog/2016/06/container-design-patterns/)
+* Each pod is meant to run a single instance of the application.
+* To scale horizantally, you should use multiple pods.
+* This is referred as _replication_ in K8s.
+* Replicated pods are created and managed as a group by an abstraction called controller. 
+## How Pods manage multiple Containers
+* Pods are designed to support multiple cooperating processes as containers that form a cohesive unit of service.
+* Containers in a pod are automatically co-located and co-scheduled on the same machine.
+* Containers can share resources and dependencies, communicate with one another and coordinate when and how they are terminated.
+### __Networking__
+* Each pod is assigned a unique IP address.
+* Every container in the pod shares the network namespace including the IP address and network ports.
+* Containers within the same pod can communicate via localhost.
 # References
 * https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/
 * https://kubernetes.io/blog/2015/06/the-distributed-system-toolkit-patterns/
