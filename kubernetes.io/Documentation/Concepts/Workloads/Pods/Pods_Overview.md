@@ -35,8 +35,16 @@
 	* Building an application from modular containers means thinking about symbiotic groups of containers that cooperate to provide a service, not one container per service. 
 	* In K8s, this symbiotic group of containers is called a pod. This also required that the containers of a pod be co-scheduled onto the same machine. The way to achieve this is to make pod itself as the atomic scheduling unit.
 	### Patterns
-	#### Sidecar Containers
+	* In all of these cases we have used container boundary as an encapsulation / abstraction boundary.
+	* This allowed to build modular and reusable components that we can combine to build applications.
+	#### Sidecar containers
 	* Extend and enhance the main container.
+	#### Ambassador containers
+	* Proxy a local connection to the world.
+	* Example : An ambassador is a proxy responsible for splitting reads and writes and sending them to appropriate servers.
+	#### Adapater containers
+	* Standardize and normalize output.
+	* Example : Transforming monitoring data from various containers into a single unified representation.
 	## Container Design Patterns
 # References
 * https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/
