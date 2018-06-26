@@ -45,7 +45,8 @@
 		#### Adapter containers
 		* Standardize and normalize output.
 		* Example : Transforming monitoring data from various containers into a single unified representation.
-	## Container Design Patterns
+	## [Container Design Patterns](https://kubernetes.io/blog/2016/06/container-design-patterns/)
 # References
 * https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/
 * https://kubernetes.io/blog/2015/06/the-distributed-system-toolkit-patterns/
+* https://kubernetes.io/blog/2016/06/container-design-patterns/
