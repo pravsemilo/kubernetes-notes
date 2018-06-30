@@ -1,9 +1,9 @@
-# Features
 * Production grade container orchestration.
 * Automated container deployment, scaling and management.
 * Groups containers that make up an application unit into logical units for easy management and discovery.
 * Planet scale.
 * Run anywhere on public cloud, on-premise or hybrid infrastructure.
+# Features
 * __Automatic Binpacking__ - Automatically places containers based on their resource requirements and other constraints, while not sacrificing availability. Mix critical and best-effort workloads in order to drive up utilization and save even more resources.
 * __Horizantal Scaling__
 * __Self Healing__ - Restarts containers that fail, replaces and reschedules containers when nodes die, kills containers that don't respond to your user-defined health check, and doesn't advertise them to clients until they are ready to serve.
