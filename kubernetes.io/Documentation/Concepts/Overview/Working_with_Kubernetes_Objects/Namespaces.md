@@ -6,6 +6,10 @@
 * Names of resources need to be unique within a namespace.
 * Also provide a way to divide cluster resources between multiple users (via `resource quota`).
 # Working with Namespaces
+## Viewing namespaces
+```
+$ kubectl get namespaces
+```
 * K8s starts with three initial namespaces.
 	* `default`
 		* Default namespace for objects with no other namespace.
@@ -14,10 +18,6 @@
 	* `kube-public`
 		* Created automatically and readable by all users (including those not authenticated). 
 		* Reserved for cluster usage, in case that some resources should be visible and readable publicly throughout the whole cluster.
-## Viewing namespaces
-```
-$ kubectl get namespaces
-```
 ## Setting the namespace for a request
 * Use the `--namespace` flag.
 ```
