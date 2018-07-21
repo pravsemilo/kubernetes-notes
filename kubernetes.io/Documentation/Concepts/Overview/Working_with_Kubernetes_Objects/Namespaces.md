@@ -37,7 +37,7 @@ $ kubectl config view | grep namespace
 * Most K8s resources (Example - pods, services, replication controller etc) are in a namespace.
 * However namespace resources are not themselves in a namespace.
 * Low-level resources like `nodes` and `persistentVolmes` are not in any namespace.
-```
+```bash
 # In a namespace
 $ kubectl api-resources --namespaced=true
 # Not in a namespace
