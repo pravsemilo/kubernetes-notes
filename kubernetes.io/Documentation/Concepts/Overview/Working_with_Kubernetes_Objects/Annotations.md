@@ -4,7 +4,7 @@
 * In contrast, annotations are not used to identify and select objects.
 * Metadata in annotations can be small or large, structured or unstructured, and can include characters not permitted by labels.
 * Annotations like labels are key/value maps.
-```
+```json
 "metadata": {
 	"annotations": {
 		"key1" : "value1",

@@ -7,7 +7,7 @@
 * Also provide a way to divide cluster resources between multiple users (via `resource quota`).
 # Working with Namespaces
 ## Viewing namespaces
-```
+```bash
 $ kubectl get namespaces
 ```
 * K8s starts with three initial namespaces.
@@ -20,11 +20,11 @@ $ kubectl get namespaces
 		* Reserved for cluster usage, in case that some resources should be visible and readable publicly throughout the whole cluster.
 ## Setting the namespace for a request
 * Use the `--namespace` flag.
-```
+```bash
 $ kubectl --namespace=your-namespace get pods
 ```
 ## Setting the namespace preference
-```
+```bash
 $ kubectl config set-context $(kubectl config current-context) --namespace=your-namespace
 $ kubectl config view | grep namespace
 ```

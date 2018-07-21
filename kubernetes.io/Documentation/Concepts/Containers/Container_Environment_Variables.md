@@ -11,7 +11,7 @@
 ##  Cluster Information
 * A list of all services that were running when a container was created is available to that container as environment variables.
 * For a service name `foo` that maps to a container named `bar`, the following variables are defined.
-```
+```bash
 FOO_SERVICE_HOST=<host where foo service is running on>
 FOO_SERVICE_PORT=<port where foo service is running on>
 ```

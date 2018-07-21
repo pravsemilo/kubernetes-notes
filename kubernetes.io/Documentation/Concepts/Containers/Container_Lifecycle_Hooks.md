@@ -36,7 +36,7 @@
 	* `FailedPostStartHook` for `PostStart`
 	* `FailedPreStopHook` for `PreStop`
 * You can get these events by running
-```
+```bash
 $ kubectl describe pod <pod_name>
 ```
 # Resources

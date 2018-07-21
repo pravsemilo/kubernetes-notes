@@ -1,5 +1,5 @@
 * Labels are key/value pairs attached to objects.
-```
+```json
 "metadata": {
 	"labels": {
 		"key1" : "value1",
@@ -46,7 +46,7 @@
 * Equality or inequality-based requirements allow filtering by label keys and values.
 * Matching objects must satisfy all of the specified label constraints.
 * Three kinds of operators are admitted `=`, `==` and `!=`.
-```
+```bash
 environment = production
 tier != frontend
 ```
@@ -67,7 +67,7 @@ partition
 * Set of pods that a `service` targets or the population of pods that a `replicationController` should manage is defined with a label selector.
 * Defined in JSON or YAML.
 * Only equality based requrirements are supported.
-```
+```json
 "selector": {
 	"component" : "redis",
 }
@@ -79,7 +79,7 @@ partition
 	* `key` - Label key.
 	* `operator` - `In`, `NotIn`, `Exist` and `DoesNotExist`
 	* `values` - Array of label values. Not empty in case of `In` and `NotIn`.
-```
+```json
 selector:
   matchLabels:
     component: redis

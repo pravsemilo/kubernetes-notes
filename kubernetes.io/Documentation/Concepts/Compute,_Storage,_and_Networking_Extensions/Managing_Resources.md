@@ -3,7 +3,7 @@
 * Multiple resources can be created the same way as a single resource.
 	* Resources are created in the order they appear in the file.
 * `kubectl create` also accepts multiple `-f` arguments.
-```
+```bash
 $ kubectl create -f <file1> -f <file2>
 ```
 # Bulk operations in kubectl
@@ -11,21 +11,21 @@ $ kubectl create -f <file1> -f <file2>
 * Can use label selectors for bulk operations.
 # Using labels effectively
 * We can display specific labels in `kubectl get` command.
-```
+```bash
 $ kubtectl get pods -L<label-name>
 ```
 # Canary deployments
 * Can be acheived via label selectors.
 # Updating labels
-```
+```bash
 $ kubectl label pods -l <existing-name>=<existing-value> <new-label>=<new-value>
 ```
 # Updating annotations
-```
+```bash
 $ kubectl annotate pods <pod-name> <annotation-name>=<annotation-value>
 ```
 # Scaling your application
-```
+```bash
 $ kubectl scale deployment/my-nginx --replicas=1
 $ kubectl autoscale deployment/my-nginx --min=1 --max=3
 ```

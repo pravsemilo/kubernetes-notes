@@ -13,7 +13,7 @@ Declarative object configuration|Directories of files|Production projects|1+|Hig
 * Better to run a one-off task in a cluster.
 * No history of previous configurations.
 ## Examples
-```
+```bash
 $ kubectl run nginx --image nginx
 $ kubectl create deployment nginx --image nginx
 ```
@@ -29,7 +29,7 @@ $ kubectl create deployment nginx --image nginx
 * The command specifies the operation, optional flags and at least one file name.
 * The file must contain a full definition of object in YAML or JSON format.
 ##  Examples
-```
+```bash
 $ kubectl create -f nginx.yaml
 $ kubectl delete -f nginx.yaml
 $ kubectl replace -f nginx.yaml
@@ -50,7 +50,7 @@ $ kubectl replace -f nginx.yaml
 * Operations are automatically detected per-object by `kubectl`.
 * This enables working on directories where different operations may be needed for different objects.
 ## Examples
-```
+```bash
 $ kubectl -f configs/
 $ kubectl -f -R configs/
 ```

@@ -12,7 +12,7 @@
 		create <objecttype> [<subtype>] <instancename>
 		```
 	* Some object types have subtypes that you can specify in `create` command.
-		```
+		```bash
 		$ kubectl create service nodeport <myservicename>
 		```
 # How to update objects
@@ -41,15 +41,15 @@
 * We can use a combination of `set` and `create` to specify a value for the field.
 * Pipe the output of `create` command to the `set` command and then back to the `create` command.
 	* Create the configuration file and but print it to stdout as YAML.
-		```
+		```bash
 		$ kubectl create service -o yaml --dry-run
 		```
 	* Read the configuration from stdin and write the updated configuration to stdout as YAML.
-		```
+		```bash
 		$ kubectl set --local -f - -o yaml
 		```
 	* Create the object using the configuration provided in stdin.
-		```
+		```bash
 		$ kubectl create -f - 
 		```
 # Using `--edit` to modify objects before creation

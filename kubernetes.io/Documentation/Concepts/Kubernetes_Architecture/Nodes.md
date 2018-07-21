@@ -63,7 +63,7 @@ Node Condition|Description
 * Modification are irrespective of `--register-node` flag.
 * Modifications can include setting labels and marking the node as unschedulable.
 * Marking a node unschedulable will prevent new pods from being scheduled on that node. This won't affect existing pods.
-```
+```bash
 $ kubectl cordon $NODENAME
 ```
 * Pods created by DaemonSet controller bypass the K8s scheduler and hence don't respect the unschedulable attribute on a node.

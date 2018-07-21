@@ -8,14 +8,14 @@
 * _Declarative Configuration Writer / Declarative Writer_ : One who updates the live objects.
 # How to create objects
 * Use `kubectl apply` to create all objects, except those that already exist, defined by configuration files in a specified directory.
-	```
+	```bash
 	$ kubectl apply -f <directory>
 	```
 * This sets the `kubectl.kubernetes.io/last-applied-configuration: '{...}'` annotation on each object.
 * Annotation contains the contents of the object configuration file that was used to create the object.
 * Add `-R` to recursively process the subdirectories.
 * Print the live configuration using
-	```
+	```bash
 	$ kubectl get -f <file|url> -o yaml
 	```
 # How to update objects
@@ -24,29 +24,29 @@
 	* Clears the field removed from the configuration file in the live configuration.
 	* Add `-R` to recursively process the subdirectories.
 * `kubectl scale` updates the replica fields in the live configuration.
-	```
+	```bash
 	$ kubectl scale <deployment> --replicas=<replica-count>
 	```
 * This sets the `kubectl.kubernetes.io/last-applied-configuration: '{...}'` annotation on each object.
 * Print the live configuration using
-	```
+	```bash
 	$ kubectl get -f <file|url> -o yaml
 	```
 # How to delete objects
 * Approaches :
 	* __Recommended__
 		* Manually deleting objects using the imperative command.
-			```
+			```bash
 			$ kubectl delete -f <filename>
 			```
 		* More explicit about what is being deleted.
 	* __Alternative__
 		* Recommened if we know what we are about the change.
-			```
+			```bash
 			$ kubectl apply -f <directory> --prune -l <labels>
 			```
 # How to view objects
-```
+```bash
 $ kubectl get -f <filename|url> -o yaml
 ```
 # How `apply` calculates difference and merge changes
