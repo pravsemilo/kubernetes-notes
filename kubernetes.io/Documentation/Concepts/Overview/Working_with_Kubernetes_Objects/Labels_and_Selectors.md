@@ -1,18 +1,19 @@
-* Labels are key/value pairs attached to objects.
+* __Labels__
+	* Labels are key/value pairs attached to objects.
 	* Labels are intended to be used to specify identifying attributes of objects that are meaningful and relevant to users, but do not directly imply semantics to the core system.
 	* Labels can be used to organize and select subset of objects.
 	* Labels can be attached at creation time and subsequently added or modified.
 	* Each key must be unique for a given object.
-```json
-"metadata": {
-	"labels": {
-		"key1" : "value1",
-		"key2" : "value2"
+	* Eventually these are indexed and reverse indexed for efficient queries and watches, sorting and grouping.
+	* Don't put large or strctured data in labels.
+	```json
+	"metadata": {
+		"labels": {
+			"key1" : "value1",
+			"key2" : "value2"
+		}
 	}
-}
-```
-* Eventually these are indexed and reverse indexed for efficient queries and watches, sorting and grouping.
-* Don't put large or strctured data in labels.
+	```
 # Motivation
 * Enable users to map their own organizational structures onto system objects without client requiring to store these mappings.
 # Syntax and character set
