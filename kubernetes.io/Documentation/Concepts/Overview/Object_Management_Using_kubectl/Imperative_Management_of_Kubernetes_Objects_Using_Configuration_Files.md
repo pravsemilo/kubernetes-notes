@@ -27,13 +27,13 @@ $ kubectl create --edit
 ```
 # Migrating from imperative commands to imperative object configuration
 * Export the live object to a local object configuration file.
-```bash
-$ kubectl get / -o yaml -export > _.yaml
-```
+	```bash
+	$ kubectl get / -o yaml -export > _.yaml
+	```
 * Manually remove the status field from the object configuration file.
 * For subsequent object management, use `replace`.
-```bash
-$ kubectl replace -f _.yaml
-```
+	```bash
+	$ kubectl replace -f _.yaml
+	```
 # References
 * https://kubernetes.io/docs/concepts/overview/object-management-kubectl/imperative-config/
