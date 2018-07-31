@@ -1,4 +1,5 @@
 * Annotations are used to attach arbitrary non-identifying metadata to objects.
+# Attaching metadata to objects
 * You can use either labels or annotations to attach metadata to K8s objects.
 * Labels can be used to select or find objects that satisfy certain conditions.
 * In contrast, annotations are not used to identify and select objects.
