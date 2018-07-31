@@ -22,12 +22,12 @@
 * `kubectl apply` can also be used to update objects.
 	* Sets the field that appear in the configuration file in the live configuration.
 	* Clears the field removed from the configuration file in the live configuration.
-	* Add `-R` to recursively process the subdirectories.
+* Add `-R` to recursively process the subdirectories.
+* This sets the `kubectl.kubernetes.io/last-applied-configuration: '{...}'` annotation on each object.
 * `kubectl scale` updates the replica fields in the live configuration.
 	```bash
 	$ kubectl scale <deployment> --replicas=<replica-count>
 	```
-* This sets the `kubectl.kubernetes.io/last-applied-configuration: '{...}'` annotation on each object.
 * Print the live configuration using
 	```bash
 	$ kubectl get -f <file|url> -o yaml
@@ -98,6 +98,7 @@ No|Not applicable|No|Do nothing. Keep live value.
 	* `patchMergeKey` is defined for each field in the K8s source code `types.go`.
 	* When merging a list of maps, the field specified as `patchMergeKey` for a given element is used like a map key for that element.
 #### Merge a list of primitive elements
+* As of K8s 1.5, merging lists of primitive elements is not supported.
 # Default field values
 * The API server sets certain fields to default values in the live configuration if they are not specified when the object is created.
 * In a patch request, defaulted fields are not re-defaulted unless they are explicitly cleared as part of a patch request.
