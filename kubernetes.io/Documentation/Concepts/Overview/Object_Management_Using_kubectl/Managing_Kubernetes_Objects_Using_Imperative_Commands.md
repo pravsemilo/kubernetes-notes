@@ -1,9 +1,9 @@
 # How to create objects
 * `kubectl` supports verb-driven commands for creating some of the most common object types.
-	* The commands are named to be recognizable to users unfamiliar with the Kubernetes object types.
-		* `run` - Create a new `Deployment` object to run `Containers` in one or more `Pods`.
-		* `expose` - Create a new `Service` object to load balance traffic across `Pods`.
-		* `autoscale` - Create a new `Autoscaler` object to automatically horizontally scale a controller, such as a `Deployment`.
+* The commands are named to be recognizable to users unfamiliar with the Kubernetes object types.
+	* `run` - Create a new `Deployment` object to run `Containers` in one or more `Pods`.
+	* `expose` - Create a new `Service` object to load balance traffic across `Pods`.
+	* `autoscale` - Create a new `Autoscaler` object to automatically horizontally scale a controller, such as a `Deployment`.
 * `kubectl` also supports creation commands driven by object type.
 	* Support more object types.
 	* More explicit about their intent.
@@ -17,10 +17,10 @@
 		```
 # How to update objects
 * `kubectl` supports verb-driven commands for updating some of the most common object types.
-	* These commands are named to enable users unfamiliar with K8s objects to perform updates without knowing the specific fields that must be set.
-		* `scale` - Horizantally scale a controller to add or remove `Pods` by updating the replica count of the controller.
-		* `annotate` - Add or remove a annotation from an object.
-		* `label` - Add or remove a label from an object.
+* These commands are named to enable users unfamiliar with K8s objects to perform updates without knowing the specific fields that must be set.
+	* `scale` - Horizantally scale a controller to add or remove `Pods` by updating the replica count of the controller.
+	* `annotate` - Add or remove a annotation from an object.
+	* `label` - Add or remove a label from an object.
 * `kubectl` also supports update commands driven by an aspect of the object.
 	* Setting this aspect may set different fields for different object types.
 		* `set` - Set an aspect for an object.
@@ -56,5 +56,9 @@
 * You can use `kubectl create --edit` to make arbitrary changes to objects before it is created.
 * Create the configuration file using the `--dry-run` flag of  `kubectl create` command.
 * Edit the configuration file before creating the object using `kubectl create --edit` command.
+```bash
+$ kubectl create service clusterip my-svc --clusterip="None" -o yaml --dry-run > /tmp/srv.yaml
+$ kubectl create --edit -f /tmp/srv.yaml
+```
 # References
 * https://kubernetes.io/docs/concepts/overview/object-management-kubectl/imperative-command/
