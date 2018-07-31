@@ -24,19 +24,19 @@
 		* Not longer than 253 characters in total.
 		* Prefix and name are separated by a slash.
 		* If prefix is omitted, key is presumed to be private to the user.
+		* `kubernetes.io/` is reserved for core K8s components.
 	* Name
 		* Required
 		* Max 63 characters
 		* Start and end with alphanumeric characters with dashes, dots, underscores and alphanumeric characters in between.
-* `kubernetes.io/` is reserved for core K8s components.
 * Valid label values
 	* Max 63 characters.
 	* Start and end with alphanumeric characters with dashes, dots, underscores and alphanumeric characters in between.
 	* Can be empty. 
 # Label Selectors
-* Labels do not provide uniqueness.
+* Labels do not provide uniqueness. In general, many objects carry the same label(s).
 * Via a _label selector_, the client/user can identify a set of objects.
-* It is the core grouping primitive in K8s.
+* Label selector is the core grouping primitive in K8s.
 * API currently supports two types of selectors.
 	* _Equality Based_
 	* _Set Based_
@@ -48,9 +48,10 @@
 * Equality or inequality-based requirements allow filtering by label keys and values.
 * Matching objects must satisfy all of the specified label constraints.
 * Three kinds of operators are admitted `=`, `==` and `!=`.
-```bash
+```
 environment = production
 tier != frontend
+environment=dev,tier!=frontend
 ```
 ## Set-based requirement
 * Allows filtering keys according to a set of values.
