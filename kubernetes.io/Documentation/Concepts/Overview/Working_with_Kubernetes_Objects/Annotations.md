@@ -14,8 +14,8 @@
 }
 ```
 * Examples of information that could be recorded in annotations :
-	* Fields managed by declarative configuration layer.
-	* Build, release and image information.
+	* Fields managed by declarative configuration layer. Attaching these fields as annotations distinguishes them from default values set by client or server and from auto-generated fields and fields set by auto-sizing and auto-scaling systems.
+	* Build, release and image information like timestamps, release IDs, VCS branch etc.
 	* Pointers to logging, monitoring, analytics or audit repositories.
 	* Client library or tools that can be used for debugging purposes.
 # References
