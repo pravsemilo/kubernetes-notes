@@ -12,7 +12,17 @@
 * `=`
 * `==`
 * `!=`
+```bash
+$  kubectl get services --field-selector metadata.namespace!=default
+```
 # Chained selectors
 * Field selectors can be chained together as a comma-separated list.
+```bash
+$ kubectl get pods --field-selector=status.phase!=Running,spec.restartPolicy=Always
+```
+# Multiple resource types
+```bash
+$ kubectl get statefulsets,services --field-selector metadata.namespace!=default
+```
 # References
 * https://kubernetes.io/docs/concepts/overview/working-with-objects/field-selectors/
